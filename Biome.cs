@@ -9,7 +9,7 @@ namespace TheCrack
 {
     public class Biome : ModWorld
     {
-
+        public static int custombiome = 0;
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
         {
 
@@ -28,7 +28,18 @@ namespace TheCrack
                     int TileType = mod.TileType("RedDirt");     //this is the tile u want to use for the biome , if u want to use a vanilla tile then its int TileType = 56; 56 is obsidian block
 
                     WorldGen.TileRunner(X, Y, 350, WorldGen.genRand.Next(100, 200), TileType, false, 0f, 0f, true, true);  //350 is how big is the biome     100, 200 this changes how random it looks.
+                    for (int k = 0; k < 750; k++)                     //750 is the ore spawn rate. the bigger is the number = more ore spawns
+                    {
+                        int Xo = X + Main.rand.Next(-240, 240);
+                        int Yo = Y + Main.rand.Next(-240, 240);
+                        if (Main.tile[Xo, Yo].type == mod.TileType("CustomTileBlock"))   //this is the tile where the ore will spawn
+                        {
 
+                            {
+                                WorldGen.TileRunner(Xo, Yo, (double)WorldGen.genRand.Next(5, 10), WorldGen.genRand.Next(5, 10), mod.TileType("LunarOre"), false, 0f, 0f, false, true);  //   5, 10 is how big is the ore veins.    mod.TileType("CustomOreTile") is the custom ore tile,  if u want a vanila ore just do this: TileID.Cobalt, for cobalt spawn
+                            }
+                        }
+                    }
                 }
 
             }));
