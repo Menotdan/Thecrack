@@ -1,0 +1,80 @@
+CrackShell Is updating again! Thank you all for 1,600+ Downloads! I wasn't expecting this many downloads!(I'm not very well known)
+
+v5.8.5:
+Added quite a few things don't have time for description.
+Added TmodLoader 0.10 support!
+
+v5.7.5:
+Fixed Dirt Gun and added a new gun!
+
+v0.5.7:
+Added another early game weapon: The Dirt Gun!
+
+v0.5.6.6:
+Fixed bug with the weapon!
+
+v0.5.6.5:
+Added New Early-Game Weapon!
+
+v0.5.6:
+Added more Stuff!
+Added Server(May not work with people out of my Local Area Network, IDK)
+Mods Required for server:
+Calamity Mod
+CrackShell
+IP: 127.0.0.1
+Port: 7777
+Password: 1234
+
+v0.5.5.1:
+Updated Description!
+
+v0.5.5:
+Added Acorn Pancakes!
+
+v0.5.4.1:
+Added a homepage!
+
+v0.5.4:
+Added more Bosses!
+Have Some bugs to fix, but wanted to release this first.
+
+v0.5.1:
+Fixed Some Bugs
+
+v0.5:
+Very Update!
+Much wow!
+Added Lunar Death Beam
+Added Custom recipe for iron anvil(This took quite some researching)
+Added Two New Bosses!
+Added Summon items for them!
+
+v0.4.4:
+Added Lunar Wings to go with the armor set!
+
+v0.4:
+Added new armor set!
+
+v0.3.1:
+2 Bossfights
+5 NPCs
+6 Items
++ Fixed Some Bugs
+
+v0.3:
+2 Bossfights
+4 NPCs
+5 Items
+
+
+v0.2:
+1 Bossfight
+3 NPCs
+4 Items
+
+
+v 0.1:
+1 Boss
+3 items
+(Not Very much)

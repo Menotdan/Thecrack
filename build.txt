@@ -1,0 +1,5 @@
+author = xX_Cobalt_Boss_Xx
+
+version = 0.5.8.5
+displayName = CrackShell
+homepage = https://forums.terraria.org/index.php?threads/crackshell.57430/#post-1341558
