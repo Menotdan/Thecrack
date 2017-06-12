@@ -27,9 +27,8 @@ namespace TheCrack.Items
 
         public override bool CanUseItem(Player player)
         {
-            return !NPC.AnyNPCs(mod.NPCType("ShadowEye"));  //you can't spawn this boss multiple times
-            return !NPC.AnyNPCs(mod.NPCType("ShadowWormHead"));  //you can't spawn this boss multiple times
-            return !Main.dayTime;   //can use only at night
+            // you can't spawn this boss multiple times
+            return !(NPC.AnyNPCs(mod.NPCType("ShadowEye")) || NPC.AnyNPCs(mod.NPCType("ShadowWormHead"))) && !Main.dayTime;
         }
 
         public override bool UseItem(Player player)

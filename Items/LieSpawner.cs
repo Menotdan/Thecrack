@@ -25,12 +25,6 @@ namespace TheCrack.Items
             Tooltip.SetDefault("Spawns the lie biome!");
         }
 
-        public override bool CanUseItem(Player player)
-        {
-            return !NPC.AnyNPCs(mod.NPCType("TheLie"));  //you can't spawn this boss multiple times
-            return !Main.dayTime;   //can use only at night
-        }
-
         public override bool UseItem(Player player)
         {
             NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("TheLie"));   //boss spawn
