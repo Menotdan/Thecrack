@@ -4,10 +4,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.Items.Armor
-{   [AutoloadEquip(EquipType.Breastplate)]
+{
+    [AutoloadEquip(EquipType.Body)]
     public class LunarBreastplate : ModItem
-    {   
-
+    {
         public override void SetDefaults()
         {
             item.width = 18;
@@ -16,16 +16,18 @@ namespace TheCrack.Items.Armor
             item.rare = 2;
             item.defense = 15;
         }
-	    public override void SetStaticDefaults()
+
+        public override void SetStaticDefaults()
         {
-         DisplayName.SetDefault("Lunar Breastplate");
-          Tooltip.SetDefault("These are dark times...");
-        } 
+            DisplayName.SetDefault("Lunar Breastplate");
+            Tooltip.SetDefault("These are dark times...");
+        }
 
         public override void UpdateEquip(Player player)
         {
             player.statLifeMax2 += 100;   //20 max mana
         }
+
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);

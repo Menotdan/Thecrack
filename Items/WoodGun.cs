@@ -7,12 +7,10 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Wood Gun";  //Gun name  
             item.damage = 10;  //gun damage
             item.ranged = true;   //its a gun so set this to true
             item.width = 32;     //gun image width
             item.height = 32;   //gun image  height
-            item.toolTip = "This gun feels like it's cool.";   //gun description
             item.useTime = 5;  //how fast 
             item.useAnimation = 20;
             item.useStyle = 5;    //
@@ -26,16 +24,21 @@ namespace TheCrack.Items
             item.useAmmo = ProjectileID.Bullet;
         }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Wood Gun");
+            Tooltip.SetDefault("This gun feels like it's cool.");
+        }
+
         public override void AddRecipes()  //How to craft this gun
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.Wood, 15);   //you need 1 DirtBlock
-			recipe.AddIngredient(mod.ItemType("DirtGun"), 1);
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
+            recipe.AddIngredient(mod.ItemType("DirtGun"), 1);
+            recipe.AddIngredient(ItemID.DirtBlock, 1);
             recipe.AddTile(TileID.WorkBenches);   //at work bench
             recipe.SetResult(this);
             recipe.AddRecipe();
-
         }
     }
 }

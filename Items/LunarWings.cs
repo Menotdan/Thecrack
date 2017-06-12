@@ -4,10 +4,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.Items
-{   [AutoloadEquip(EquipType.Wings)]
+{
+    [AutoloadEquip(EquipType.Wings)]
     public class LunarWings : ModItem
     {
-
         public override void SetDefaults()
         {
             item.width = 22;
@@ -16,12 +16,12 @@ namespace TheCrack.Items
             item.rare = 2;
             item.accessory = true;
         }
-	 	    public override void SetStaticDefaults()
-       {
-        DisplayName.SetDefault("Lunar Wings");
-         Tooltip.SetDefault("Very Stiff.");
-       }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lunar Wings");
+            Tooltip.SetDefault("Very Stiff.");
+        }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

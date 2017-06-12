@@ -12,12 +12,18 @@ namespace TheCrack.Items   //where is located
     {
         public override void SetDefaults()
         {
-            item.name = "Lunar Bar";     //Sword name
             item.maxStack = 999;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lunar Bar");
+            Tooltip.SetDefault("");
+        }
+
         public override void AddRecipes()  //How to craft this sword
         {
-            ModRecipe recipe = new ModRecipe(mod);      
+            ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType("LunarOre"), 3);   //you need 1 DirtBlock
             recipe.AddTile(TileID.Furnaces);   //at work bench
             recipe.SetResult(this);

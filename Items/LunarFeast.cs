@@ -12,9 +12,7 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Lunar Death Beam";     //the name displayed when hovering over the Weapon ingame.
             item.damage = 40;  //The damage stat for the Weapon.
-            item.toolTip = "Shoot a laser beam so dark it makes the Moon seem bright..";  //The description of the Weapon shown when hovering over the Weapon ingame.
             item.noMelee = true;  //Setting to True allows the weapon sprite to stop doing damage, so only the projectile does the damge
             item.noUseGraphic = false;
             item.magic = true;    //This defines if it does magic damage and if its effected by magic increasing Armor/Accessories.
@@ -31,7 +29,14 @@ namespace TheCrack.Items
             item.shoot = mod.ProjectileType("LunarBeam");  //This defines what type of projectile this weapon will shoot	
             item.value = Item.sellPrice(0, 3, 0, 0);//	How much the item is worth, in copper coins, when you sell it to a merchant. It costs 1/5th of this to buy it back from them. An easy way to remember the value is platinum, gold, silver, copper or PPGGSSCC (so this item price is 3gold)
         }
-              public override void AddRecipes()
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lunar Death Beam");
+            Tooltip.SetDefault("Shoot a laser beam so dark it makes the Moon seem bright..");
+        }
+
+        public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.SoulofNight, 10);

@@ -7,13 +7,11 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Dirt Bullet"; 
             item.damage = 2;
             item.ranged = true;
             item.width = 8;
             item.height = 8;
             item.maxStack = 999;
-            item.toolTip = "Don't Complain about dirty hands.";
             item.consumable = true;
             item.knockBack = 0.75f;
             item.value = 10;
@@ -22,6 +20,13 @@ namespace TheCrack.Items
             item.shootSpeed = 15f;
             item.ammo = ProjectileID.Bullet;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Dirt Bullet");
+            Tooltip.SetDefault("Don't Complain about dirty hands.");
+        }
+
         public override void AddRecipes()  //How to craft this gun
         {
             ModRecipe recipe = new ModRecipe(mod);

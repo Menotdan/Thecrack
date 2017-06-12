@@ -4,10 +4,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.Items.Armor
-{   [AutoloadEquip(EquipType.Wings)]
+{
+    [AutoloadEquip(EquipType.Head)]
     public class LunarHelmet : ModItem
     {
-
         public override void SetDefaults()
         {
             item.width = 18;
@@ -16,16 +16,18 @@ namespace TheCrack.Items.Armor
             item.rare = 2;
             item.defense = 8;
         }
-	 	     public override void SetStaticDefaults()
+
+        public override void SetStaticDefaults()
         {
-         DisplayName.SetDefault("Lunar Helmet");
-          Tooltip.SetDefault("This is a dark helmet.");
+            DisplayName.SetDefault("Lunar Helmet");
+            Tooltip.SetDefault("This is a dark helmet.");
         }
 
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
             return body.type == mod.ItemType("LunarBreastplate") && legs.type == mod.ItemType("LunarLeggings");  //put your Breastplate name and Leggings name
         }
+
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "See Like An Owl"; // the armor set bonus
@@ -34,6 +36,7 @@ namespace TheCrack.Items.Armor
             player.AddBuff(BuffID.Spelunker, 2);  //shine potion buff
             player.AddBuff(BuffID.Shine, 2);  //shine potion buff
         }
+
         public override void AddRecipes()  //How to craft this item
         {
             ModRecipe recipe = new ModRecipe(mod);

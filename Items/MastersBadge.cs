@@ -8,23 +8,24 @@ namespace TheCrack.Items
 {
     public class MastersBadge : ModItem
     {
-
-
         public override void SetDefaults()
         {
-            item.name = "Master's Badge";
             item.width = 10;
             item.height = 14;
-            item.toolTip = "Who's the master now?!";
             item.value = 10;
             item.rare = 3;
             item.accessory = true;
         }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Master's Badge");
+            Tooltip.SetDefault("Who's the master now?!");
+        }
+
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            
-            player.noFallDmg = true; 
+            player.noFallDmg = true;
             player.canRocket = true;
             player.rocketTime = 2;
             player.rocketBoots = 1;

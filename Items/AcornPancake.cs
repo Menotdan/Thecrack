@@ -12,7 +12,6 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Acorn Pancake";// in game item name
             item.UseSound = SoundID.Item3;                //this is the sound that plays when you use the item
             item.useStyle = 2;//this is how the item is holded when used
 			item.potion = true;
@@ -24,7 +23,6 @@ namespace TheCrack.Items
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 20;
             item.height = 28;
-            item.toolTip = "Tasty Acorn Pancakes";
             item.value = 100;                
             item.rare = 1;
             item.buffType = mod.BuffType("ContentedBuff");    //this is where you put your Buff name
@@ -32,9 +30,13 @@ namespace TheCrack.Items
             return;
         }
 
-		
-	    
-		        public override void AddRecipes()  //How to craft this sword
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Acorn Pancake");
+            Tooltip.SetDefault("Tasty Acorn Pancakes");
+        }
+
+        public override void AddRecipes()  //How to craft this sword
         {
             ModRecipe recipe = new ModRecipe(mod);      
             recipe.AddIngredient(mod.ItemType("SmashedAcorn"), 3);   //you need 1 DirtBlock

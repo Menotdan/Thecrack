@@ -8,11 +8,9 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Cursed Imprint";
             item.width = 20;
             item.height = 20;
             item.maxStack = 999;
-            AddTooltip("Summons the Cursed Projectile launcher.");
             item.value = 100;
             item.rare = 1;
             item.useAnimation = 30;
@@ -20,11 +18,19 @@ namespace TheCrack.Items
             item.useStyle = 4;
             item.consumable = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Cursed Imprint");
+            Tooltip.SetDefault("Summons the Cursed Projectile launcher.");
+        }
+
         public override bool CanUseItem(Player player)
-        {           
+        {
             return !NPC.AnyNPCs(mod.NPCType("CursedDeath"));  //you can't spawn this boss multiple times
             return !Main.dayTime;   //can use only at night
         }
+
         public override bool UseItem(Player player)
         {
             NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("CursedDeath"));   //boss spawn
@@ -32,6 +38,7 @@ namespace TheCrack.Items
 
             return true;
         }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

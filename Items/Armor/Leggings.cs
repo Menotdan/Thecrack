@@ -4,10 +4,10 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.Items.Armor
-{   [AutoloadEquip(EquipType.Leggings)]
+{
+    [AutoloadEquip(EquipType.Legs)]
     public class LunarLeggings : ModItem
     {
-
         public override void SetDefaults()
         {
             item.width = 18;
@@ -17,11 +17,12 @@ namespace TheCrack.Items.Armor
             item.defense = 7;
         }
 
-	   public override void SetStaticDefaults()
-       {
-        DisplayName.SetDefault("Lunar Leggings");
-         Tooltip.SetDefault("Darkness Swarms around your legs...");
-       }
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lunar Leggings");
+            Tooltip.SetDefault("Darkness Swarms around your legs...");
+        }
+
         public override void UpdateEquip(Player player)
         {
             player.moveSpeed += 0.38f;  //player movement speed incresed 0.05f = 5%

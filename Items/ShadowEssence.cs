@@ -8,11 +8,9 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Shadow Essence";
             item.width = 20;
             item.height = 20;
             item.maxStack = 920;
-            AddTooltip("Furry to the touch!");
             item.value = 100;
             item.rare = 1;
             item.useAnimation = 30;
@@ -20,20 +18,28 @@ namespace TheCrack.Items
             item.useStyle = 4;
             item.consumable = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Shadow Essence");
+            Tooltip.SetDefault("Furry to the touch!");
+        }
+
         public override bool CanUseItem(Player player)
-        {           
+        {
             return !NPC.AnyNPCs(mod.NPCType("ShadowEye"));  //you can't spawn this boss multiple times
             return !NPC.AnyNPCs(mod.NPCType("ShadowWormHead"));  //you can't spawn this boss multiple times
             return !Main.dayTime;   //can use only at night
         }
+
         public override bool UseItem(Player player)
         {
             NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("ShadowWormHead"));   //boss spawn
             NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("ShadowEye"));   //boss spawn
             Main.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
-
             return true;
         }
+
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

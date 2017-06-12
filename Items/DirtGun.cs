@@ -7,12 +7,10 @@ namespace TheCrack.Items
     {
         public override void SetDefaults()
         {
-            item.name = "Dirt Gun";  //Gun name  
             item.damage = 2;  //gun damage
             item.ranged = true;   //its a gun so set this to true
             item.width = 32;     //gun image width
             item.height = 32;   //gun image  height
-            item.toolTip = "This gun feels like it could crumble at any second.";   //gun description
             item.useTime = 15;  //how fast 
             item.useAnimation = 20;
             item.useStyle = 5;    //
@@ -24,6 +22,12 @@ namespace TheCrack.Items
             item.shoot = 10; //idk why but all the guns in the vanilla source have this
             item.shootSpeed = 16f;
             item.useAmmo = ProjectileID.Bullet;
+        }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Dirt Gun");
+            Tooltip.SetDefault("This gun feels like it could crumble at any second.");
         }
 
         public override void AddRecipes()  //How to craft this gun
