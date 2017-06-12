@@ -7,7 +7,15 @@ namespace TheCrack.NPCs
 {
     public class ModGlobalNPC : GlobalNPC
     {
-	    public bool customdebuff = false;
+        public override bool InstancePerEntity
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public bool customdebuff = false;
         public override void NPCLoot(NPC npc)
         {
             if (Main.rand.Next(3) == 0)   //item rarity
