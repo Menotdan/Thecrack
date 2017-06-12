@@ -11,7 +11,6 @@ namespace TheCrack.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Red Laser";
             projectile.width = 32;
             projectile.height = 82;
             projectile.friendly = true;
@@ -22,7 +21,12 @@ namespace TheCrack.Projectiles
             projectile.tileCollide = true;                 //this make that the projectile does not go thru walls
             projectile.ignoreWater = true;
         }
- 
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Red Laser");
+        }
+
         public override void AI()
         {
                                                                 //this is projectile dust

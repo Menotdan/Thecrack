@@ -17,7 +17,6 @@ namespace TheCrack.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.name = "Lunar Beam";  //this is the projectile name
             projectile.width = 10;
             projectile.height = 10;
             projectile.friendly = true;     //this defines if the projectile is frendly
@@ -25,6 +24,11 @@ namespace TheCrack.Projectiles
             projectile.tileCollide = false;   //this defines if the tile can colide with walls
             projectile.magic = true;
             projectile.hide = true;
+        }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Lunar Beam");
         }
 
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)

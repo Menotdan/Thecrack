@@ -25,6 +25,7 @@ namespace TheCrack.Buffs
             Main.dust[num1].velocity *= 3f; //the dust velocity
             Main.dust[num1].noGravity = true;
         }
+
         public override void Update(Player player, ref int buffIndex)
         {
             player.GetModPlayer<MyPlayer>(mod).customdebuff = true;  //this tells the game to use the public bool customdebuff from MyPlayer.cs

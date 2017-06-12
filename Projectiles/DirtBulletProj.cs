@@ -10,7 +10,6 @@ namespace TheCrack.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.name = "Dirt Bullet";
             projectile.width = 12;
             projectile.height = 12;
             projectile.aiStyle = 1;
@@ -24,6 +23,11 @@ namespace TheCrack.Projectiles
             ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;
             ProjectileID.Sets.TrailingMode[projectile.type] = 0;
             aiType = ProjectileID.Bullet;
-        }       
+        }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Dirt Bullet");
+        }
     }
 }
