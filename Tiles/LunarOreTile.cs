@@ -13,7 +13,9 @@ namespace TheCrack.Tiles
             Main.tileBlockLight[Type] = true;  //true for block to emit light
             Main.tileLighted[Type] = true;
             drop = mod.ItemType("LunarOre");   //put your CustomBlock name
-            AddMapEntry(new Color(48, 51, 56), "Lunar Ore");
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Lunar Ore");
+            AddMapEntry(new Color(48, 51, 56), name);
         }
       
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)   //light colors

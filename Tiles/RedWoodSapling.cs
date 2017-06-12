@@ -31,9 +31,13 @@ namespace TheCrack.Tiles
             TileObjectData.newTile.RandomStyleRange = 3;
             TileObjectData.addTile(Type);
             sapling = true;
-            AddMapEntry(new Color(200, 200, 0), "RedWoodSapling");
+
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("RedWoodSapling");
+            AddMapEntry(new Color(200, 200, 0), name);
             adjTiles = new int[] { TileID.Saplings };
         }
+
         public override void RandomUpdate(int i, int j)
         {
             if (WorldGen.genRand.Next(20) == 0)
@@ -46,6 +50,7 @@ namespace TheCrack.Tiles
                 }
             }
         }
+
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects effects)
         {
             if (i % 2 == 1)
