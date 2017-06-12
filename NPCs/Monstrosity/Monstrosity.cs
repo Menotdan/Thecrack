@@ -7,15 +7,14 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.NPCs.Monstrosity
-{   [AutoloadBossHead]
+{
+    [AutoloadBossHead]
     public class Monstrosity : ModNPC
     {
         public override void SetDefaults()
         {
-            npc.name = "The Monstrosity";
-            npc.displayName = "The Monstrosity";
             npc.lifeMax = 50000; //Boss Hp - life
-			npc.aiStyle = 32;
+            npc.aiStyle = 32;
             npc.damage = 34; //Boss damage
             npc.defense = 23; //Boss armor / defense
             npc.knockBackResist = 0f;
@@ -38,16 +37,21 @@ namespace TheCrack.NPCs.Monstrosity
             npc.netAlways = true;
         }
 
-   public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The Monstrosity");
+        }
+
+        public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
         {
             player.AddBuff(mod.BuffType("CustomDebuff"), 550, true);
- 
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.HealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

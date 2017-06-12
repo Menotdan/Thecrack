@@ -12,8 +12,6 @@ namespace TheCrack.NPCs.SpazReborn
     {
         public override void SetDefaults()
         {
-            npc.name = "SpazReborn";
-            npc.displayName = "Spazmatism Reborn";
             npc.aiStyle = 31; //Not moving target
             npc.lifeMax = 40000; //Boss Hp - life
             npc.damage = 80; //Boss damage
@@ -35,10 +33,17 @@ namespace TheCrack.NPCs.SpazReborn
             music = MusicID.Boss2;
             npc.netAlways = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Spazmatism Reborn");
+        }
+
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.GreaterHealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

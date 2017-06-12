@@ -12,8 +12,6 @@ namespace TheCrack.NPCs.TinyDeath
     {
         public override void SetDefaults()
         {
-            npc.name = "Tiny Death";
-            npc.displayName = "Tiny Death";
             npc.aiStyle = 5; //Not moving target
             npc.lifeMax = 100000; //Boss Hp - life
             npc.damage = 250; //Boss damage
@@ -35,19 +33,26 @@ namespace TheCrack.NPCs.TinyDeath
             music = MusicID.LunarBoss;
             npc.netAlways = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Tiny Death");
+        }
+
         public override void FindFrame(int frameHeight)
         {
             npc.frameCounter -= 0.875F; // Determines the animation speed. Higher value = faster animation.
             npc.frameCounter %= Main.npcFrameCount[npc.type];
             int frame = (int)npc.frameCounter;
             npc.frame.Y = frame * frameHeight;
-
             npc.spriteDirection = npc.direction;
         }
+
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.GreaterHealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale); // boss life bude v "ExpertMódu"

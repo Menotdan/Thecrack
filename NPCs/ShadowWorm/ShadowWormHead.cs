@@ -15,8 +15,6 @@ namespace TheCrack.NPCs.ShadowWorm
     {
         public override void SetDefaults()
         {
-            npc.name = "Shadow Worm";        //this is the npc Name
-            npc.displayName = "Shadow Worm";
             npc.lifeMax = 100000;        //this is the npc health
             npc.damage = 200;    //this is the npc damage
             npc.defense = 45;         //this is the npc defense
@@ -32,6 +30,11 @@ namespace TheCrack.NPCs.ShadowWorm
             npc.value = Item.buyPrice(0, 0, 2, 10);
             npc.npcSlots = 1f;
             npc.netAlways = true;
+        }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Shadow Worm");
         }
 
         public override bool PreAI()

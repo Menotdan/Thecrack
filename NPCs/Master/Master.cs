@@ -12,8 +12,6 @@ namespace TheCrack.NPCs.Master
     {
         public override void SetDefaults()
         {
-            npc.name = "TheMaster";
-            npc.displayName = "The Master";
             npc.aiStyle = 30; //Not moving target
             npc.lifeMax = 4000; //Boss Hp - life
             npc.damage = 34; //Boss damage
@@ -35,11 +33,18 @@ namespace TheCrack.NPCs.Master
             music = MusicID.LunarBoss;
             npc.netAlways = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The Master");
+        }
+
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.HealingPotion; // drop z bosse
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MastersBadge"));
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

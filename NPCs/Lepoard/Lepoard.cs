@@ -12,8 +12,6 @@ namespace TheCrack.NPCs.Lepoard
     {
         public override void SetDefaults()
         {
-            npc.name = "Lepoard";
-            npc.displayName = "The Puny Lepoard";
             npc.aiStyle = 31; //Not moving target
             npc.lifeMax = 1000; //Boss Hp - life
             npc.damage = 20; //Boss damage
@@ -35,10 +33,17 @@ namespace TheCrack.NPCs.Lepoard
             music = MusicID.LunarBoss;
             npc.netAlways = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The Puny Lepoard");
+        }
+
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.HealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

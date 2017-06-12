@@ -12,8 +12,6 @@ namespace TheCrack.NPCs.YoungSlimePrince
     {
         public override void SetDefaults()
         {
-            npc.name = "SlimePrince";
-            npc.displayName = "Glorbo, The Young Slime Prince";
             npc.aiStyle = 15; //Not moving target
             npc.lifeMax = 1500; //Boss Hp - life
             npc.damage = 8; //Boss damage
@@ -35,11 +33,18 @@ namespace TheCrack.NPCs.YoungSlimePrince
             music = MusicID.Boss1;
             npc.netAlways = true;
         }
+
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Glorbo, The Young Slime Prince");
+        }
+
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.LesserHealingPotion; // drop z bosse
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TheSlimesCrown"));
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

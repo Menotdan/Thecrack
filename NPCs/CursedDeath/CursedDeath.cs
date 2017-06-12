@@ -7,13 +7,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.NPCs.CursedDeath
-{   [AutoloadBossHead]
+{
+    [AutoloadBossHead]
     public class CursedDeath : ModNPC
     {
         public override void SetDefaults()
         {
-            npc.name = "Cursed Death";
-            npc.displayName = "Cursed Death";
             npc.lifeMax = 50000; //Boss Hp - life
             npc.damage = 34; //Boss damage
             npc.defense = 23; //Boss armor / defense
@@ -37,6 +36,11 @@ namespace TheCrack.NPCs.CursedDeath
             npc.netAlways = true;
         }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Cursed Death");
+        }
+
         public override void AI() //this is where you program your AI
         {
             Player P = Main.player[npc.target];
@@ -52,18 +56,18 @@ namespace TheCrack.NPCs.CursedDeath
                 int num54 = Projectile.NewProjectile(vector8.X, vector8.Y, (float)((Math.Cos(rotation) * Speed) * -1), (float)((Math.Sin(rotation) * Speed) * -1), type, damage, 0f, 0);
                 npc.ai[1] = 0;
             }
-         }
+        }
 
-   public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
+        public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
         {
             player.AddBuff(mod.BuffType("CustomDebuff"), 550, true);
- 
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.HealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

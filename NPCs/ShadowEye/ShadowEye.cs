@@ -7,13 +7,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.NPCs.ShadowEye
-{   [AutoloadBossHead]
+{
+    [AutoloadBossHead]
     public class ShadowEye : ModNPC
     {
         public override void SetDefaults()
         {
-            npc.name = "The Shadow Eye";
-            npc.displayName = "The Shadow Eye";
             npc.lifeMax = 50000; //Boss Hp - life
             npc.damage = 100; //Boss damage
             npc.defense = 73; //Boss armor / defense
@@ -35,6 +34,11 @@ namespace TheCrack.NPCs.ShadowEye
             npc.netAlways = true;
         }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("The Shadow Eye");
+        }
+
         public override void AI()
         {
             npc.ai[0]++;
@@ -44,8 +48,8 @@ namespace TheCrack.NPCs.ShadowEye
                 npc.TargetClosest(true);
             }
             npc.netUpdate = true;
- 
             npc.ai[1]++;
+
             if (npc.ai[1] >= 160)  // 230 is projectile fire rate
             {
                 float Speed = 60f;  //projectile speed
@@ -57,14 +61,16 @@ namespace TheCrack.NPCs.ShadowEye
                 int num54 = Projectile.NewProjectile(vector8.X, vector8.Y, (float)((Math.Cos(rotation) * Speed) * -1), (float)((Math.Sin(rotation) * Speed) * -1), type, damage, 0f, 0);
                 npc.ai[1] = 0;
             }
+
             if (npc.ai[0] % 600 == 100)  //Npc spown rate
- 
             {
                 NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("ShadowMinion"));  //NPC name
             }
+
             npc.ai[1] += 0;
             if (npc.life <= 24000)  //when the boss has less than 70 health he will do the charge attack
                 npc.ai[2]++;                //Charge Attack
+
             if (npc.ai[2] >= 20)
             {
                 npc.velocity.X *= 2f;
@@ -83,6 +89,7 @@ namespace TheCrack.NPCs.ShadowEye
                 Color color = new Color();
                 Rectangle rectangle = new Rectangle((int)npc.position.X, (int)(npc.position.Y + ((npc.height - npc.width) / 2)), npc.width, npc.width);
                 int count = 30;
+
                 for (int i = 1; i <= count; i++)
                 {
                     int dust = Dust.NewDust(npc.position, rectangle.Width, rectangle.Height, 6, 0, 0, 100, color, 2.5f);
@@ -103,16 +110,16 @@ namespace TheCrack.NPCs.ShadowEye
             return true;
         }
 
-   public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
+        public override void OnHitPlayer(Player player, int damage, bool crit)  //this make so when this npc hit he player it will give to the player this debuff
         {
             player.AddBuff(mod.BuffType("CustomDebuff"), 550, true);
- 
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
             potionType = ItemID.GreaterHealingPotion; // drop z bosse
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.579f * bossLifeScale); // boss life bude v "ExpertMódu"

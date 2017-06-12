@@ -10,8 +10,6 @@ namespace TheCrack.NPCs
     {
         public override void SetDefaults()
         {
-            npc.name = "Glitch";
-            npc.displayName = "Glitch";
             npc.width = 50;
             npc.height = 40;
             npc.damage = 1;
@@ -28,29 +26,36 @@ namespace TheCrack.NPCs
             animationType = NPCID.GreenSlime;
         }
 
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Glitch");
+        }
+
         public float CanSpawn(NPCSpawnInfo spawnInfo)
         {
             return spawnInfo.spawnTileY < Main.rockLayer && !Main.dayTime ? 0.01f : 0.01f; //spown at day
         }
+
         public override void FindFrame(int frameHeight)
         {
             npc.frameCounter -= 0.875F; // Determines the animation speed. Higher value = faster animation.
             npc.frameCounter %= Main.npcFrameCount[npc.type];
             int frame = (int)npc.frameCounter;
             npc.frame.Y = frame * frameHeight;
-
             npc.spriteDirection = npc.direction;
         }
+
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 3f * bossLifeScale); // boss life bude v "ExpertM�du"
-            npc.damage = (int)(npc.damage * 0.6f);} //Boss damage v "Expert m�du"
+            npc.damage = (int)(npc.damage * 0.6f); //Boss damage v "Expert m�du"
+        }
+
         public override void NPCLoot()  //Npc drop
         {
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ItemName"), 2); //Item spawn
             }
-
         }
     }
 }
