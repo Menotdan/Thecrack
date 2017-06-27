@@ -16,7 +16,7 @@ namespace TheCrack.Items   //where is located
             item.melee = true;            //if it's melee
             item.width = 90;              //Sword width
             item.height = 90;             //Sword height
-            item.useTime = 8;          //how fast 
+            item.useTime = 3;          //how fast 
             item.useAnimation = 25;
             item.useStyle = 1;        //Style is how this item is used, 1 is the style of the sword
             item.knockBack = 5;      //Sword knockback
@@ -25,11 +25,6 @@ namespace TheCrack.Items   //where is located
             item.UseSound = SoundID.Item1;       //1 is the sound of the sword
             item.autoReuse = true;   //if it's capable of autoswing.
             item.useTurn = true;
-            item.shoot = 304;
-            item.shoot = 304;
-            item.shoot = 304;
-            item.shoot = 304;
-            item.shootSpeed = 11f;
         }
 
         public override void SetStaticDefaults()
