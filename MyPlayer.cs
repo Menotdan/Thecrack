@@ -30,10 +30,6 @@ namespace TheCrack
                 player.lifeRegen -= 60; //this make so the player take damage, the highter is the value the more life losing.
             }
         }
-        public override void UpdateBiomes()
-        {
-            ZoneCustomBiome = (Biome.customBiome > 0);
-        }
 
     }
 }

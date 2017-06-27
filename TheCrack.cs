@@ -23,7 +23,17 @@ namespace TheCrack
                 AutoloadSounds = true
             };
         }
-              public override void AddRecipes()
+        public override void UpdateMusic(ref int music)
+        {
+            if (Main.myPlayer != -1 && !Main.gameMenu)
+            {
+                if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].GetModPlayer<MyPlayer>(this).ZoneCustomBiome) //this makes the music play only in Custom Biome
+                {
+                    music = GetSoundSlot(SoundType.Music, "Sounds/Music/RedWoodMusic");  //add where is the custom music is located
+                }
+            }
+        }
+        public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(this);
             recipe.AddIngredient(ItemID.StoneBlock, 10);
