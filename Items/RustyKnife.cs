@@ -43,9 +43,9 @@ namespace TheCrack.Items   //where is located
 
         }
 
-        public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)  //how to add a buff to a melee weapon.
         {
-            player.AddBuff(mod.BuffType("CustomDebuff"), 400);  //400 is the buff time
+            target.AddBuff(mod.BuffType("CustomDebuff"), 600);      //this adds the buff to the npc that got hit by this sword , 600 is the time the buff lasts
         }
 
         public override void MeleeEffects(Player player, Rectangle hitbox)
