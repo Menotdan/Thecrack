@@ -26,10 +26,6 @@ namespace TheCrack.Items
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.noFallDmg = true;
-            player.canRocket = true;
-            player.rocketTime = 2;
-            player.rocketBoots = 1;
-            player.rocketTimeMax = 2;
             player.aggro += 300;
             player.meleeCrit += 10;
             player.meleeDamage += 0.32f;

@@ -1,5 +1,9 @@
 CrackShell Is updating again! Thank you all for 1,600+ Downloads! I wasn't expecting this many downloads!(I'm not very well known)
 
+v5.8.6:
+Added Rusty Knife
+Added Rainbow Disk
+
 v5.8.5:
 Added quite a few things don't have time for description.
 Added TmodLoader 0.10 support!
