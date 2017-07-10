@@ -34,7 +34,7 @@ namespace TheCrack.Items
         {
             for (int i = 0; i < 1000; ++i)
             {
-                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
+                if (Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot)
                 {
                     return false;
                 }
