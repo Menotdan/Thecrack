@@ -2,10 +2,11 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.NPCs.ShadowWorm
-{
+{    
     public class ShadowWormTail : ModNPC
     {
         public override void SetDefaults()

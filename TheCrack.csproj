@@ -55,7 +55,6 @@
     <Compile Include="Items\LunarWings.cs" />
     <Compile Include="Items\MastersBadge.cs" />
     <Compile Include="Items\MonsterBait.cs" />
-    <Compile Include="Items\OilBottle.cs" />
     <Compile Include="Items\RainbowDisk.cs" />
     <Compile Include="Items\RedDirt.cs" />
     <Compile Include="Items\RedWood.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Projectiles\DirtBulletProj.cs" />
     <Compile Include="Projectiles\HealingBeam.cs" />
     <Compile Include="Projectiles\LunarBeam.cs" />
+    <Compile Include="Projectiles\Rai.cs" />
     <Compile Include="Projectiles\RainbowDiskProj.cs" />
     <Compile Include="Projectiles\RedLaser.cs" />
     <Compile Include="TheCrack.cs" />

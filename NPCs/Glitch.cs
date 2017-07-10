@@ -1,8 +1,9 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-//By Al0n37
+                                                            //By Al0n37
 namespace TheCrack.NPCs
 {
     public class Glitch : ModNPC

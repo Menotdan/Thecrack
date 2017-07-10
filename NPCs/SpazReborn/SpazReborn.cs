@@ -1,10 +1,13 @@
+using System;
+using System.IO;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TheCrack.NPCs.SpazReborn
-{
-    [AutoloadBossHead]
+{   [AutoloadBossHead]
     public class SpazReborn : ModNPC
     {
         public override void SetDefaults()
