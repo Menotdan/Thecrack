@@ -1,8 +1,6 @@
-using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
- 
+
 namespace TheCrack.Buffs
 {
     public class ContentedBuff : ModBuff
