@@ -1,5 +1,8 @@
 CrackShell Is updating again! Thank you all for 1,600+ Downloads! I wasn't expecting this many downloads!(I'm not very well known)
 
+v5.8.7:
+Fixed Matser's Badge and added Oil Bottles
+
 v5.8.6:
 Added Rusty Knife
 Added Rainbow Disk
